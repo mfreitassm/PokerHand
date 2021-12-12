@@ -5,7 +5,8 @@
   "description": "Poker Hand Sorter (Engineer role)",
   "main": "main.js",
   "scripts": {
-    "test": "nodemon ./main.js ./hands/poker-hands.txt"
+    "dev": "nodemon ./main.js ./hands/poker-hands.txt",
+    "test": "node ./main.js ./hands/poker-hands.txt"
   },
   "author": "Mariana Freitas",
   "license": "ISC",
