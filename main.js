@@ -19,11 +19,14 @@ import { compareHands } from "./poker-hand.helper.js";
   let countPlayer1 = 0;
   let countPlayer2 = 0;
 
+  var lineno = 0;
   for await (const line of rl) {
     // Each line in file will be successively available here as `line`.
+    lineno++;
     const hands = line.split(" ");
     if (hands.length != 10) {
-      throw "Minimal set of cards not provided.";
+      console.log(`There is an error at line ${lineno} and it will be excluded. Content ${line}.`);
+      continue;
     }
     const p1Hand = hands.slice(0, 5);
     const p2Hand = hands.slice(5, 10);
