@@ -2,11 +2,11 @@
   "name": "pokerhand",
   "version": "1.0.0",
   "type": "module",
-  "description": "Poker Hand Sorter (Engineer role)",
+  "description": "Poker Hand Sorter",
   "main": "main.js",
   "scripts": {
     "dev": "nodemon ./main.js ./hands/poker-hands.txt",
-    "test": "node ./main.js ./hands/poker-hands.txt"
+    "start": "node ./main.js ./hands/poker-hands.txt"
   },
   "author": "Mariana Freitas",
   "license": "ISC",
