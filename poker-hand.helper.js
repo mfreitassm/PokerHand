@@ -19,13 +19,11 @@ export function compareHands(handPlayer1, handPlayer2) {
 }
 
 function getHandDetails(cards) {
-  // console.log(cards);
   const order = "123456789TJQKA";
   const faces = cards.map((a) => String.fromCharCode([77 - order.indexOf(a[0])])).sort();
-  // console.log(faces);
-  const suits = cards.map((a) => a[1]).sort();
   const counts = faces.reduce(count, {});
   const duplicates = Object.values(counts).reduce(count, {});
+  const suits = cards.map((a) => a[1]).sort();
   const flush = suits[0] === suits[4];
   const first = faces[0].charCodeAt(0);
   const lowStraight = faces.join("") === "AJKLM";
@@ -46,9 +44,8 @@ function getHandDetails(cards) {
   return { rank, value };
 
   function byCountFirst(a, b) {
-    // Counts are in reverse order - bigger is better
     const countDiff = counts[b] - counts[a];
-    if (countDiff) return countDiff; // If counts don't match return
+    if (countDiff) return countDiff;
     return b > a ? -1 : b === a ? 0 : 1;
   }
 
